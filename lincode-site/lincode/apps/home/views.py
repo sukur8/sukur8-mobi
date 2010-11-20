@@ -271,14 +271,16 @@ def search(request, subject = 'movie'):
     
     search_info = ('Enter your search keyword')
     name = 'douban'
-
+    lang_url = Language.get_lang_prefix(request) 
     ctxt_dict = { "search_info" : search_info,
                   "subject"     : subject,
-                  "page_name"     : name    }
+                  "page_name"   : name}
                   
     ctxt_dict.update(_get_common_context_dict(request))
     ctxt = Context(ctxt_dict)
-    tmpl = loader.get_template("%s/project/douban.html" % (Config.APP_NAME,))
+    logging.info("lang :%s", lang_url)
+    logging.info("name :%s", name)
+    tmpl = loader.get_template("%s/project/%s.html" %  (Config.APP_NAME, name) )
     return HttpResponse(tmpl.render(ctxt))
 
 def search_result(request, subject = 'movie'):

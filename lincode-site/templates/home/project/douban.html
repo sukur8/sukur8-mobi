@@ -21,7 +21,7 @@
     
     <div id="douban-header">
         <p>
-            <b>Douban search</b>{% trans "is a simple demo using Douban API for search movie, music and book." %}
+            <b>Douban search</b> {% trans "is a simple demo using Douban API for search movie, music and book." %}
         </p>
     </div><!--/#douban-header-->
     
@@ -88,7 +88,7 @@
 								{% endifequal %}
 							{% endfor %}{# attr in attrs #}
 					</td>
-					<td><a href=''>Add</a></td>
+		
 					</tr>
 					<tr></tr>
 			 {% endfor %}{# feed in feeds #}
@@ -99,7 +99,7 @@
 	
 	<div class="section-footer">
 		{% if search_info %}
-			<p>{{search_info}}</p>
+			
 		{% else %}
 		
 			{% if total_results %}

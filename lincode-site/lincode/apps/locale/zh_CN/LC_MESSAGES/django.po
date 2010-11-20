@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 22:46+0100\n"
+"POT-Creation-Date: 2010-11-20 23:45+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <>\n"
@@ -16,100 +16,69 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\templates\base.html.py:41 .\templates\base.html.py:84
-#: .\templates\base.html.py:148 .\templates\home\admin\admin.html.py:42
+#: .\templates\base.html.py:36 .\templates\base.html.py:77
+#: .\templates\base.html.py:125 .\templates\home\admin\admin.html.py:42
 msgid "Home "
 msgstr "主页"
 
-#: .\templates\base.html.py:42 .\templates\base.html.py:93
+#: .\templates\base.html.py:37 .\templates\base.html.py:86
 msgid "Resume"
 msgstr "简历"
 
-#: .\templates\base.html.py:43 .\templates\base.html.py:94
-#: .\templates\base.html.py:150 .\templates\home\about\blog.html.py:17
+#: .\templates\base.html.py:38 .\templates\base.html.py:87
+#: .\templates\base.html.py:127 .\templates\home\about\blog.html.py:17
 #: .\templates\home\about\blog.html.py:43
 msgid "Blog"
 msgstr "博客"
 
-#: .\templates\base.html.py:44 .\templates\base.html.py:95
-#: .\templates\base.html.py:151 .\templates\home\about\photo.html.py:14
+#: .\templates\base.html.py:39 .\templates\base.html.py:88
+#: .\templates\base.html.py:128 .\templates\home\about\photo.html.py:14
 #: .\templates\home\about\photo.html.py:40
 msgid "Photo"
 msgstr "照片"
 
-#: .\templates\base.html.py:46 .\templates\base.html.py:97
+#: .\templates\base.html.py:40 .\templates\base.html.py:95
+#: .\templates\base.html.py:126
+msgid "Project"
+msgstr "项目"
+
+#: .\templates\base.html.py:41 .\templates\base.html.py:90
 #: .\templates\home\about\contact.html.py:14
 #: .\templates\home\about\contact.html.py:22
 msgid "Contact"
 msgstr "联系"
 
-#: .\templates\base.html.py:47 .\templates\base.html.py:102
-#: .\templates\base.html.py:149
-msgid "Project"
-msgstr "项目"
-
-#: .\templates\base.html.py:86
+#: .\templates\base.html.py:79
 msgid "Lincode's home"
 msgstr "Lincode 的主页"
 
-#: .\templates\base.html.py:91
+#: .\templates\base.html.py:84
 msgid "About me"
 msgstr "关于我"
 
-#: .\templates\base.html.py:104
+#: .\templates\base.html.py:97
 msgid "AFCP"
 msgstr ""
 
-#: .\templates\base.html.py:105
+#: .\templates\base.html.py:98
 msgid "Carto"
 msgstr ""
 
-#: .\templates\base.html.py:106
+#: .\templates\base.html.py:99
+msgid "MobiCours"
+msgstr ""
+
+#: .\templates\base.html.py:100
 msgid "Douban"
 msgstr ""
 
-#: .\templates\base.html.py:145
+#: .\templates\base.html.py:122
 msgid "GUO Lin"
 msgstr "郭麟"
 
-#: .\templates\base.html.py:152 .\templates\base.html.py:153
+#: .\templates\base.html.py:129 .\templates\base.html.py:130
 msgid "Valid"
 msgstr "确认"
-
-#: .\templates\home\project\douban.html.py:24
-msgid "is a simple demo using Douban API for search movie, music and book."
-msgstr "Douban search是一个使用 Douban API 实现简单的电影，音乐和书籍 搜索引擎。"
-
-#: .\templates\home\project\douban.html.py:31
-#: .\templates\home\project\douban.html.py:41
-msgid "Movie"
-msgstr "电影"
-
-#: .\templates\home\project\douban.html.py:32
-#: .\templates\home\project\douban.html.py:44
-msgid "Book"
-msgstr "书籍"
-
-#: .\templates\home\project\douban.html.py:33
-#: .\templates\home\project\douban.html.py:47
-msgid "Music"
-msgstr "音乐"
-
-#: .\templates\home\project\douban.html.py:118
-msgid "Sorry, no result for your keyword."
-msgstr "对不起，没有与你的关键字匹配的结果。"
-
-#: .\templates\home\admin\admin.html.py:44
-msgid "Lincode's Home"
-msgstr "Lincode 的主页"
-
-#: .\templates\home\admin\admin.html.py:49
-msgid "Admin"
-msgstr "管理"
-
-#: .\templates\home\admin\admin.html.py:51
-msgid "Add Interesting"
-msgstr "添加兴趣"
 
 #: .\templates\home\about\blog.html.py:51
 msgid "New Articles"
@@ -170,3 +139,46 @@ msgstr ""
 #, python-format
 msgid "  From %(flickrauthor)s."
 msgstr ""
+
+#: .\templates\home\admin\admin.html.py:44
+msgid "Lincode's Home"
+msgstr "Lincode 的主页"
+
+#: .\templates\home\admin\admin.html.py:49
+msgid "Admin"
+msgstr "管理"
+
+#: .\templates\home\admin\admin.html.py:51
+msgid "Add Interesting"
+msgstr "添加兴趣"
+
+#: .\templates\home\project\douban.html.py:24
+#: .\templates\home\project\cn\douban.html.py:24
+msgid "is a simple demo using Douban API for search movie, music and book."
+msgstr "是一个使用 Douban API 实现简单的电影，音乐和书籍 搜索引擎。"
+
+#: .\templates\home\project\douban.html.py:31
+#: .\templates\home\project\douban.html.py:41
+#: .\templates\home\project\cn\douban.html.py:31
+#: .\templates\home\project\cn\douban.html.py:41
+msgid "Movie"
+msgstr "电影"
+
+#: .\templates\home\project\douban.html.py:32
+#: .\templates\home\project\douban.html.py:44
+#: .\templates\home\project\cn\douban.html.py:32
+#: .\templates\home\project\cn\douban.html.py:44
+msgid "Book"
+msgstr "书籍"
+
+#: .\templates\home\project\douban.html.py:33
+#: .\templates\home\project\douban.html.py:47
+#: .\templates\home\project\cn\douban.html.py:33
+#: .\templates\home\project\cn\douban.html.py:47
+msgid "Music"
+msgstr "音乐"
+
+#: .\templates\home\project\douban.html.py:118
+#: .\templates\home\project\cn\douban.html.py:118
+msgid "Sorry, no result for your keyword."
+msgstr "对不起，没有与你的关键字匹配的结果。"
