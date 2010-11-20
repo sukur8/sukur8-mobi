@@ -1,0 +1,226 @@
+{% comment %}
+<!--
+  Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+
+  This file contains javascript classes for aggregating feeds. It requires Google AJAX Feed API.
+  
+  Created on 2008-11-19.
+  $Id: feeds_aggregator.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+
+<style type="text/css"><!--
+
+/*------------------------------------------------------------------------------------------------*/
+/* Feeds styles (for FeedsAggregator)                                                             */
+/*------------------------------------------------------------------------------------------------*/
+
+.feed-entry {
+  margin: 0;
+  padding: 0 0 8px 0;
+}
+
+.feed-entry .feed-entry-title {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font: normal bold 110% 'Trebuchet MS',arial,sans-serif;
+  line-height: 1.4em;
+}
+
+.feed-entry .feed-entry-info {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  color: #888888;
+  line-height: 1.4em;
+}
+
+.feed-entry .feed-entry-content {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font: normal normal 100% arial,sans-serif;
+  line-height: 1.4em;
+}
+
+--></style>
+
+<script type="text/javascript">//<![CDATA[
+
+/**************************************************************************************************/
+
+/**
+ * This class represents an entry in the feed. A FeedEntry object is constructed from the feed
+ * result obtained from Google AJAX Feed API.
+ * @param feed   the feed result obtained from Google AJAX Feed API, in JSON format.
+ * @param entry  the entry in the feed result obtained from Google AJAX Feed API, in JSON format.
+ */
+function FeedEntry(feed, entry) {
+    this.feedName       = feed.title;
+    this.feedLink       = feed.link;
+    this.feedAuthor     = feed.author;
+    this.title          = entry.title;
+    this.link           = entry.link;
+    this.publishedDate  = new Date(entry.publishedDate);
+    if (feed.link.indexOf("http://www.flickr.com/") == 0) {
+        this.content = entry.content;
+    } else {
+        this.content = entry.contentSnippet + " ... ";
+    }
+}
+
+/**
+ * Renders the feed entry to HTML.
+ * @return the HTML DOM node containing the feed entry.
+ */
+FeedEntry.prototype.render = function() {
+
+    // Create the HTML DOM node for the feed entry.
+    var entryNode = document.createElement("div");
+    entryNode.className = "feed-entry";
+    
+    // Append the feed entry's title node.
+    var titleAnchorNode = document.createElement("a");
+    titleAnchorNode.href = this.link;
+    titleAnchorNode.appendChild(document.createTextNode(this.title));
+    var titleNode = document.createElement("div");
+    titleNode.className = "feed-entry-title";
+    titleNode.appendChild(titleAnchorNode);
+    entryNode.appendChild(titleNode);
+    
+    // Append the feed entry's info node.
+    var feedAnchorNode = document.createElement("a");
+    feedAnchorNode.href = this.feedLink;
+    feedAnchorNode.appendChild(document.createTextNode(this.feedName));
+    var publishedDateText = document.createTextNode(
+        ", published on " + this.publishedDate.toDateString() );
+    var infoNode = document.createElement("div");
+    infoNode.className = "feed-entry-info";
+    infoNode.appendChild(feedAnchorNode);
+    infoNode.appendChild(publishedDateText);
+    entryNode.appendChild(infoNode);
+    
+    // Append the feed entry's content node.
+    var contentNode = document.createElement("div");
+    contentNode.className = "feed-entry-content";
+    contentNode.innerHTML = this.content;
+    entryNode.appendChild(contentNode);
+    
+    // Return the HTML DOM node.
+    return entryNode;
+}
+
+/**************************************************************************************************/
+
+/**
+ * This class is a container of feed entries from multiple feeds.
+ */
+function FeedsAggregator() {
+    this.feeds       = new Array();
+    this.entries     = new Array();
+    this.loaded      = 0;
+    this.failed      = 0;
+    this.showEntries = -1;
+    this.feedsNodeId = "feeds";
+}
+
+/**
+ * Adds a feed to the aggregator.
+ * @param feed  the feed URL to add.
+ */
+FeedsAggregator.prototype.addFeed = function(feed) {
+    if (feed != null) {
+        this.feeds.push(new google.feeds.Feed(feed));
+    }
+}
+
+/**
+ * Adds a feed entry to the aggregator.
+ * @param entry  the feed entry to add, should be a FeedEntry object.
+ */
+FeedsAggregator.prototype.addEntry = function(entry) {
+    if (entry != null) {
+        this.entries.push(entry);
+    }
+}
+
+/**
+ * Function that gets called when all entries from a certain feed are loaded successfully. It
+ * increases the loaded feed counter by one, and renders all loaded entries to HTML if necessary.
+ */
+FeedsAggregator.prototype.onFeedLoaded = function() {
+    this.loaded++;
+    if (this.loaded + this.failed >= this.feeds.length) {
+        this.render();
+    }
+}
+
+/**
+ * Function that gets called when entries from a certain feed failed to be loaded. It increases the
+ * failed feed counter by one, and renders all loaded entries to HTML if necessary.
+ */
+FeedsAggregator.prototype.onFeedFailed = function() {
+    this.failed++;
+    if (this.loaded + this.failed >= this.feeds.length) {
+        this.render();
+    }
+}
+
+/**
+ * Renders all loaded feed entries to HTML.
+ */
+FeedsAggregator.prototype.render = function() {
+    var feedsNode = document.getElementById(this.feedsNodeId);
+    if (feedsNode != null) {
+        // Sort the feed entries by published date.
+        this.entries = this.entries.sort( function(a, b) {
+            if (a.publishedDate < b.publishedDate) {
+                return 1;
+            } else if (a.publishedDate == b.publishedDate) {
+                return 0;
+            } else {
+                return -1;
+            }
+        } );
+        // Calculate the max number of entries to render.
+        var maxEntries = this.entries.length;
+        if (this.showEntries > 0 && this.showEntries < maxEntries) {
+            maxEntries = this.showEntries;
+        }
+        // Append each feed entry to the feeds node.
+        for (var i = 0; i < maxEntries; i++) {
+            var entryNode = this.entries[i].render();
+            feedsNode.appendChild(entryNode);
+        }
+    }
+}
+
+/**************************************************************************************************/
+
+/**
+ * Loads feeds and renders to the specified HTML DOM node.
+ */
+FeedsAggregator.prototype.loadAndRender = function() {
+    var aggregator = this;
+    for (var i = 0; i < aggregator.feeds.length; i++) {
+        aggregator.feeds[i].load( function(result) {
+            if (!result.error) {
+                for (var j = 0; j < result.feed.entries.length; j++) {
+                    var entry = new FeedEntry(result.feed, result.feed.entries[j]);
+                    aggregator.addEntry(entry);
+                }
+                aggregator.onFeedLoaded();
+            } else {
+                aggregator.onFeedFailed();
+            }
+        } ); // aggregator.feeds[i].load(...)
+    }
+}
+
+//]]></script>
+
+
+
+
+

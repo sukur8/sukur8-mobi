@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% comment %}
+<!--
+
+
+  Created on 2008-12-08.
+  $Id: about.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+{% load i18n %}
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_head %}
+
+{% block html_title %}FIXME: html_title{% endblock %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/sections.css"/>
+
+<script type="text/javascript">//<![CDATA[
+
+function markCurrentEntry() {
+    $("#entry_{{ page_name }}").addClass("current");
+}
+
+$(document).ready( function() { markCurrentEntry(); } );
+
+//]]></script>
+
+{% endblock %}{# html_head #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% comment %}
+<!--
+  Created on 2008-12-08.
+  $Id: admin.html 19 2009-10-19 22:33:46Z guolin.mobi $
+-->
+{% endcomment %}
+{% load i18n %}
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_head %}
+
+{% block html_title %}FIXME: html_title{% endblock %}
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/search.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/sections.css"/>
+<script type="text/javascript">//<![CDATA[
+
+function markCurrentEntry() {
+    $("#entry_{{ subject }}").addClass("current");
+	$("#entry_{{ page_name }}").addClass("current");
+
+}
+
+$(document).ready( function() { markCurrentEntry(); } );
+
+//]]></script>
+
+
+{% endblock %}{# html_head #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{#------------------------------------------------------------------------------------------------#}
+<!--
+{% block sidebar %}
+              <div class="sidebar-section">
+				<div class="title">{% trans "Home " %}</div>
+					<ul class="list">
+					  <li id="entry_home"><a href="/home/">{% trans "Lincode's Home" %}</a></li>
+					</ul>
+			  </div>
+
+              <div class="sidebar-section">
+				<div class="title">{% trans "Admin" %}</div>
+					<ul class="list">
+					  <li id="entry_search"><a href="/home/admin/">{% trans "Add Interesting" %}</a></li>
+					</ul>
+			  </div>
+
+{% endblock %} 
+-->
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block content %}
+{% endblock %}{# content #}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+

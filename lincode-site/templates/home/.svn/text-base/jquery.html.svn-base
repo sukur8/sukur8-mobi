@@ -1,0 +1,16 @@
+﻿{% comment %}
+<!--
+  Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam at gmail D0T com>
+  
+  This file includes the JQuery javascript library (http://www.jquery.com/).
+  It depends on the Google AJAX APIs loader, and should be included inside the HTML head element.
+
+  Created on 2008-10-28.
+  $Id: jquery.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+
+<script type="text/javascript">//<![CDATA[
+google.load("jquery", "1.2");
+//]]></script>
+

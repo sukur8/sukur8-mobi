@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% comment %}
+<!--
+  Created on 2008-12-08.
+  $Id: project.html 19 2009-10-19 22:33:46Z guolin.mobi $
+-->
+{% endcomment %}
+{% load i18n %}
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_head %}
+
+{% block html_title %}FIXME: html_title{% endblock %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/sections.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/search.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/douban.css"/>
+<script type="text/javascript">//<![CDATA[
+
+function markCurrentEntry() {
+    $("#entry_{{ page_name }}").addClass("current");
+}
+
+$(document).ready( function() { markCurrentEntry(); } );
+
+//]]></script>
+
+{% endblock %}{# html_head #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+
+
+
+
+

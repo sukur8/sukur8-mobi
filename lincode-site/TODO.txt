@@ -1,0 +1,55 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2008 GUO Lin <http://www.guo-lin.com>
+#
+# Created on 2008-06-05
+# $Id: TODO.txt 17 2009-08-04 21:17:34Z guolin.mobi $
+#
+
+= Bug Garden To-Do List =
+
+== All ==
+
+* Remove javascript libs from SVN.
+* Create action framework and re-implement view functions.
+* Add datastore entity stats and consistence checker.
+* Add error reporting page.
+* Use jQuery's .ajax function instead of .post/.get for error reporting.
+* Add AppUser model for saving user profile.
+
+== Foods N' Roses ==
+
+* Add resto menu and recipe.
+* Add user profile.
+* Integrate Google Maps.
+* Add resto rating trends (use Google Charts?).
+
+== Forum ==
+
+* Migrate to the new directory layout.
+* Update model's event functions.
+
+== SimBook ==
+
+* Migrate to the new directory layout.
+* Update models to save a chapter as a whole.
+* Add paragraph formatting.
+* Add paragraph comments pager.
+* Add separated paragraph page.
+* Change paragraph mark color when paragraph has comments.
+* Add chapter preview when adding paragraphs. When user confirms the preview,
+  send one request per paragraph to avoid high CPU usage.
+* Add book comments.
+* Add chapter comments.
+* Add favorite quotes page.
+* Add book editing.
+* Add chapter editing.
+
+== Ideas ==
+
+* Common Utilities/Python Shell (http://shell.appspot.com/)
+* Common Utilities/File System Browser
+* Feed Aggregator
+
+#EOF
+

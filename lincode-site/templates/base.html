@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+{% comment %}
+<!--
+  Copyright (C) 2008 GUO Lin <guolin.mobi nospam-at gmail D0T com>
+  http://guo-lin.com/
+
+  The base template for the AFCP webapp.
+  
+  Created on 2008-10-28.
+  $Id: base.html 19 2009-10-19 22:33:46Z guolin.mobi $
+-->
+{% endcomment %}
+{% load i18n %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="GUO Lin's homesite"/>
+    <meta name="keywords" content="lincode, GUO Lin, guolin,"/>
+    <meta content="GUO Lin" name="author"/>    
+    <link rel="shortcut icon" type="image/ico" href="/static/images/favicon.ico"/>
+    <!--[if IE]>
+      <link rel="stylesheet" type="text/css" media="screen" href="/static/afcp/stylesheets/all_ie.css"/>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/default.css"/>
+    <script src="/static/js/external.js" type="text/javascript"></script>
+	{% include "home/google_ajax_apis.html" %}
+    {% include "home/jquery.html" %}
+    {% block html_head %}{% endblock %}	
+	</head>
+
+<body>
+{% block header %}
+<div id="header">
+	{% block menu %}
+	<ul id="menu">
+		<li><a href="/">{% trans "Home " %}</a></li>
+		<li><a href="/home/about/resume/">{% trans "Resume" %}</a></li>
+		<li><a href="/home/about/blog/">{% trans "Blog" %}</a></li> 
+		<li><a href="/home/about/photo/">{% trans "Photo" %}</a></li>
+		<li><a href="/home/project/">{% trans "Project" %}</a></li>
+        <li><a href="/home/about/contact/">{% trans "Contact" %}</a></li>
+	</ul><!--/. menu -->
+	{% endblock %}
+	
+	<div id="search">
+	Language : 
+	{% for lang in languages_ %}
+			{% if lang.is_current %}
+			   <img src="/static/images/lang_{{ lang.code }}.gif" alt="{{ lang.code }}"/>
+			{% else %}
+               <a href="{{ lang.url }}">
+				  <img src="/static/images/lang_{{ lang.code }}.gif" alt="{{ lang.code }}"/>
+               </a>  
+			{% endif %}
+	{% endfor %}
+	</div>
+	
+</div><!--/. header -->
+{% endblock %}{# header #}
+
+
+<div id="content">
+{% block sidebar_and_content %}
+	
+	<div id="sidebar-section">
+	{% block sidebar %}
+	
+		<div id="logo">
+			{% block siderbar_logo %}
+			<h1>Lincode's</h1> <h2>home page</h2>
+			{% endblock %}
+		</div>
+		
+		
+		{% block siderbar_box %}
+			<div class="box">
+				<h3>{% trans "Home " %}</h3>
+				<ul class="bottom">
+					<li id="entry_home"><a href="/home/">{% trans "Lincode's home" %}</a></li>
+				</ul>
+			</div>
+			
+			<div class="box">
+				<h3>{% trans "About me" %}</h3>
+				<ul class="bottom">
+				  <li id="entry_resume"><a href="/home/about/resume/" >{% trans "Resume" %}</a></li>
+				  <li id="entry_blog"><a href="/home/about/blog/" >{% trans "Blog" %}</a></li> 
+				  <li id="entry_photo"><a href="/home/about/photo/" >{% trans "Photo" %}</a></li>
+				 
+				  <li id="entry_contact"><a href="/home/about/contact/" >{% trans "Contact" %}</a></li>
+				</ul>
+			</div>
+
+			<div class="box">
+				<h3>{% trans "Project" %}</h3>
+				<ul class="bottom">
+					<li id="entry_afcp"><a href="/home/project/afcp/" >{% trans "AFCP" %}</a></li>
+					<li id="entry_carto"><a href="/home/project/carto/" >{% trans "Carto" %}</a></li>
+                    <li id="entry_mobicours"><a href="/home/project/mobicours/" >{% trans "MobiCours" %}</a></li>
+                    <li id="entry_douban"><a href="/home/project/douban/movie/" >{% trans "Douban" %}</a></li>
+				</ul>
+			</div>
+		{% endblock %}{# siderbar_box #}
+		
+	</div>
+	{% endblock %}{# sidebar #}
+	
+	
+	<div id="colTwo">
+		{% block content %}
+	
+
+		
+		{% endblock %}{# content #}
+	</div>
+	{% endblock %}{# sidebar_and_content #}
+</div>
+
+
+{% block footer %}
+<div id="footer">
+	    <p>    &copy;2009 {% trans "GUO Lin" %} &lt;guolin.mobi nospam-at gmail D0T com&gt;        
+        <br/>
+        |
+        <a href="/">{% trans "Home " %}</a> |
+        <a href="/home/project/" >{% trans "Project" %}</a> |
+        <a href="http://lincode.blogbus.com/" rel="external">{% trans "Blog" %}</a> |
+        <a href="http://www.flickr.com/photos/lincode/" rel="external">{% trans "Photo" %}</a> |
+        <a href="http://validator.w3.org/check?uri=referer" rel="external">{% trans "Valid" %} XHTML 1.0!</a> |
+        <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="external">{% trans "Valid" %} CSS! </a> |
+		{% for lang in languages_ %}
+			{% if lang.is_current %}
+			   <img src="/static/images/lang_{{ lang.code }}.gif" alt="{{ lang.code }}"/>
+				{% else %}
+		    	  <a href="{{ lang.url }}">
+					<img src="/static/images/lang_{{ lang.code }}.gif" alt="{{ lang.code }}"/>
+				  </a>  |  
+			{% endif %}
+		{% endfor %}
+		
+		<br/> Design by <a href="http://freecsstemplates.org/">Free CSS Templates</a>.</p>
+</div>
+{% endblock %}
+</body>
+</html>

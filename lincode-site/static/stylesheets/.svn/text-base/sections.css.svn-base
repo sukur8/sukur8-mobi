@@ -1,0 +1,80 @@
+/**
+ Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+ 
+ Created on 2008-11-20.
+ $Id: sections.css 17 2009-08-04 21:17:34Z guolin.mobi $
+ */
+
+.section {
+  margin: 0;
+  padding: 0 0 4px 0;
+  height: 1%; /* IE requires this to make a container! */
+}
+
+.section:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.section .section-float-left {
+  margin: 0;
+  padding: 0 4px 4px 0;
+  display: inline;
+  float: left;
+}
+
+.section .section-float-right {
+  margin: 0;
+  padding: 0 0 4px 4px;
+  display: inline;
+  float: right;
+}
+
+.section h1, .section h2, .section h3 {
+  font-weight: bold;
+  font-family: 'Trebuchet MS',arial,sans-serif;
+  line-height: 1.4em;
+}
+
+.section h1 {
+  margin: 0 0 8px 0;
+  padding: 4px 0 4px 0;
+  font-size: 140%;
+  border-bottom: 1px solid #888888;
+}
+
+.section h2 {
+  margin: 0;
+  padding: 2px 0 2px 0;
+  font-size: 120%;
+}
+
+.section h3 {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font-size: 110%;
+}
+
+.section p {
+  line-height: 1.4em;
+}
+
+.section ul li, .section ol li {
+  line-height: 1.4em;
+}
+
+.section-footer {
+  margin: 0;
+  padding: 4px;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  color: #888888;
+  line-height: 1.4em;
+  border-top: 1px solid #DDDDDD;
+}
+
+

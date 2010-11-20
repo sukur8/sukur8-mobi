@@ -1,0 +1,85 @@
+{% extends "home/about/about.html" %}
+{% comment %}
+<!--
+  Created on 2009-05-02.
+  $Id: resume.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_title %}
+<title>简历</title>
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/resume.css"/>
+{% endblock %}{# html_title #}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block content %}
+
+<div class="section">
+  <h1>简历</h1>
+  
+  <div class = "resume">
+	<h3>教育经历</h3>
+		<p>
+			<b>计算机</b>, 硕士学位, 九月 2006 ~ 七月 2008<br>
+            巴黎高等电信学院 - <a class="external" href="http://www.enst.fr" rel="external">Telecom ParisTech</a>，法国，巴黎<br>
+		</p>
+		<p>
+			<b>自动化</b>，学士学位, 九月 2002 ~ 七月 2006<br/>
+			武汉大学，中国，武汉
+		</p>
+
+    <h3>研究经历</h3>
+  		<p>
+			<b>关于机器人的研究工作，于武汉大学机器人实验室,</b> 十一月 2004 ~ 七月 2005<br>
+			 研究和开发机器人控制系统，而后参加了 <a class="external" href="http://www.cctv.com/science/special/aburobocon2005ch/01/index.shtml" ref="exterbal">2005 CCTV 全国大学生机器人电视大赛</a>，开发中使用了 C 语言 和 AT89S51 单片机。 
+		</p>
+		
+    <h3>工作经历</h3>
+		<p>
+			<b>程序员，就职于 <a class="external" href="http://www.parrot.com/" rel="external">Parrot Inc.</a></b> , 七月 2007 ~ 三月 2008<br>
+			参加了该公司商业产品的开发，主要使用 C++，C 和 汇编语言。工作集中于一款运行于车载蓝牙设备的名为 Disco 的软件上。 Disco 是一个用于快速搜索，管理和播放在移动游离设备（例如，u盘，移动硬盘和手机等）上的音乐文件的软件。我的具体工作是改进其中关于音频处理的 FFT(快速傅立叶变换) 算法。		
+		</p>
+  		<p>
+			<b>移动软件开发工程师，就职于 <a class="external" href="http://www.praxedo.com" rel="external">Praxedo Inc.</a></b> , 七月 2008 ~ 现在<br>
+			负责开发移动客户端的软件，工作主要使用 java 在 <b>黑莓</b> 和 <b>j2me</b> 平台上进行。<br/>
+            Praxedo Mobile 是 一个移动员工管理解决方案。利用它，经理可以在办公室管理在外执行业务的数百员工。现在这个系统运行正常，正为4000多个移动业务员提供服务。
+		</p>
+		
+	
+	<h3>业余项目</h3>
+		<p>
+			<b>开发和管理<a class="internal" href="/home/project/afcp/" rel="internal">AFCP 网页</a></b><br>
+			<a class="external" href="http://afcp.appspot.com/" rel="external">AFCP</a></b>是一个由在巴黎高科各个学校学习的中国学生组建的学生组织。我为这个学生组织开发和管理网页。其中使用了 Python 语言，代码挂载运行在 google 的云计算服务<a class="external" href="http://code.google.com/intl/en/appengine/" rel="external">Google App Engine。</a>
+		</p>
+		<p>
+			<b><a class="internal" href="/home/project/carto/" rel="internal">Carto</a> 的开发</b><br/> 
+			<a href="/carto" rel="external"><b>Carto</b></a>是一个关于地理信息的网络应用。它动态显示了一个法国城市，图卢兹市的交通状况。开发过程中使用了 XML/XSLT, SVG, Javascript 和 AJAX 等技术。
+		</p>
+
+	<h3>感兴趣的领域</h3>
+		<ul>
+			<li><b>移动技术:</b>Blackberry, iphone, Android, J2me</li>
+			<li><b>互联网:</b> Java on SSH, Python on Django, Ajax, XML/XSLT, SVG</li>
+			<li><b>数据库同步技术: </b>SyncML, Sybase's Ultralite </li>
+			<li><b>软件工程方法论: </b>设计模式，领域驱动设计，敏捷软件开发</li>
+		</ul>	
+
+	<h3>语言</h3>
+		<ul>
+			<li><b>中文: </b> 母语</li>
+			<li><b>法语: </b> 流利</li>
+			<li><b>英语: </b> CET-6</li>
+		</ul>
+    
+    <h3>兴趣爱好</h3>
+        <p>足球，滑雪，文学</p>
+		
+	</div>	
+	
+</div>
+
+{% endblock %}{# content #}
+

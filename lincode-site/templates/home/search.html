@@ -1,0 +1,122 @@
+﻿{% extends "home/admin/admin.html" %}
+{% comment %}
+<!--
+  
+  Created on 2008-11-14.
+  $Id: search.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block html_head %}
+
+<title>Lincod's Movie</title>
+
+
+
+<script type="text/javascript">//<![CDATA[
+
+
+function submitForm() {
+
+    $("#search_movie").submit();
+}
+
+//]]></script>
+
+{% endblock %}{# html_head #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block content %}
+
+<div class="section">
+  <h1>Movie search</h1>
+</div>
+
+<form id="search_movie" action="." method="GET">
+<div id="search" class="section">
+		  
+		  <td class="nowrap" width="1%" align="right"><b>Movie:</b></td>
+          <td class="nowrap"><input type="text" size="40" name="keyword" value="{{ keyword|escape }}"/></td>
+		  <td class="nowrap"> <input type="button" value="Search" onclick="submitForm()"/></td>
+</div>
+
+
+<div>
+	{% if error %}
+		<h3>{{error|escape}}</h3>
+	{% endif %}
+</div>
+
+<div id="result" class="section">	
+		<table width="100%">
+		 {% for movie in feeds.entry %}
+				<tr>
+				<td width="100" valign="top">
+				<a href="{{movie.GetAlternateLink.href}}" title="{{movie.title.text}}"><img src="{{movie.link.2.href}}" alt="{{movie.title.text}}"/></a>
+                </td>
+		
+				<td valign="top">
+					<div class="pl2"><a href="{{movie.GetAlternateLink.href}}">{{movie.title.text}}</a></div>	
+						{% for attr in movie.attribute %}
+							{% ifequal attr.name 'director' %}
+								{{attr.text}}/
+							{% endifequal %}
+							{% ifequal attr.name 'cast' %}
+								{{attr.text}}/
+							{% endifequal %}
+							{% ifequal attr.name 'pubdate' %}
+								{{attr.text}}/
+							{% endifequal %}
+							{% ifequal attr.name 'country' %}
+								{{attr.text}}/
+							{% endifequal %}														
+							{% ifequal attr.name 'language' %}
+								{{attr.text}}/
+							{% endifequal %}
+						{% endfor %}{# attr in attrs #}
+		
+						{% for attr in movie.attribute %}
+							{% ifequal attr.name 'imdb' %}
+								<p><span >imdb</span>: <a href="{{attr.text}}">{{attr.text}}</a></p>
+							{% endifequal %}
+						{% endfor %}{# attr in attrs #}
+				</td>
+				<td><a href=''>Add</a></td>
+				</tr>
+				<tr></tr>
+		 {% endfor %}{# feed in feeds #}
+		</table>
+</div><!--/#result-->
+
+<div class="section-footer">
+	{% if total_results %}
+		page :
+		{% for nb in page_list %}
+			{% ifequal nb nb_page %}
+			<b><a href="?keyword={{keyword}}&nb_page={{nb|escape}}"  name="nb_page" value="{{ nb|escape}}" onclick="">{{nb}}</a></b> 
+			{% else %}
+				<a href="?keyword={{keyword}}&nb_page={{nb|escape}}"  name="nb_page" value="{{ nb|escape}}" onclick="">{{nb}}</a>
+			{% endifequal %}
+			
+		{% endfor %}
+		( total {{ total_results }} items ) 
+		
+	{% else %}
+		<p> Non result for your keyword.</p>
+	{% endif %}
+</div>
+</form>
+
+{% endblock %}{# content #}
+
+
+
+

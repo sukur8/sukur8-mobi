@@ -1,0 +1,33 @@
+{% extends "home/project/project.html" %}
+{% comment %}
+<!--
+
+  
+  Created on 2008-12-08.
+  $Id: todo_en.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_title %}
+<title>Project :: SVG</title>
+{% endblock %}{# html_title #}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block content %}
+
+<div class="section">
+  <h1>SVG Map</h1>
+  <h2>Under construction...</h2>
+  
+  
+  
+    <img style="margin: 0; padding: 4px; border: 1px solid #DDDDDD;"
+         src="/static/images/todo.jpg"
+         alt="Under construction"/>
+  </p>
+</div>
+
+{% endblock %}{# content #}

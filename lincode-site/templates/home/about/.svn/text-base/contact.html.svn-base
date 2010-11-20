@@ -1,0 +1,49 @@
+{% extends "home/about/about.html" %}
+{% comment %}
+<!--
+
+
+  Created on 2008-12-08.
+  $Id: contact.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+{% load i18n %}
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_title %}
+<title>{% trans "Contact" %}</title>
+{% endblock %}{# html_title #}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block content %}
+
+<div class="section">
+  <h1>{% trans "Contact" %}</h1>
+  
+  <h3>{% trans "You can contact me by" %} </h3>
+  <br/>
+		<table>
+			<tr>
+			  <td class="nowrap">Gmail:</td>
+			  <td class="nowrap"><img src="/static/images/gmail.png" alt="Gmail" /></td>
+			</tr>
+			
+			<tr>
+			  <td class="nowrap">MSN:</td>
+			  <td class="nowrap"><img src="/static/images/msn.png" alt="Gmail" /></td>
+			</tr>
+		  </table>
+	<br/>
+	<br/>
+	<h3>{% trans "Welcome to contact me for" %} :</h3>	
+	<ul>
+		<li>{% trans "Career opportunities" %}</li>
+		<li>{% trans "Discussion about my projects" %}</li>
+		<li>{% trans "Getting back in touch" %}</li>
+		<li>{% trans "Other interesting things" %}</li>
+	</ul>
+</div>
+
+{% endblock %}{# content #}
+

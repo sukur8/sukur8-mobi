@@ -1,0 +1,123 @@
+{% extends "home/admin/admin.html" %}
+{% comment %}
+<!--
+  Created on 2008-12-08.
+  $Id: search.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_title %}
+	<title>Search</title>
+{% endblock %}{# html_title #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{% block content %}
+
+<div class="section">
+
+	<div class="search_subject">
+	<h1>
+			<ul class="list">
+			<li id="entry_movie"><a href="/home/admin/search/movie/">Movie</a></li>|
+			<li id="entry_book"><a href="/home/admin/search/book/">Book</a></li>| 
+			<li id="entry_music"><a href="/home/admin/search/music/">Music</a></li>
+			</ul>
+	</h1>
+
+		<form  action="/home/admin/search/{{subject}}/result/" method="GET">
+				  <table>
+				  <tr>
+				  
+					{% ifequal subject 'movie' %}
+					<td align="right"><h2>Movie:</h2></td>
+					{% endifequal %}
+					{% ifequal subject 'book' %}
+					<td align="right"><h2>Book:</h2></td>
+					{% endifequal %}
+					{% ifequal subject 'music' %}
+					<td align="right"><h2>Music:</h2></td>
+					{% endifequal %}				
+					
+				  <td ><input type="text" size="40" name="keyword" value="{{ keyword|escape }}"/></td>
+				  <td ><input type="button" value="Search" onclick="submit()"/></td>
+				  </tr>
+				  </table>
+		</form>
+	</div><!--/#search_subject-->
+
+	<div id="result">	
+			<table width="100%">
+			 {% for item in feeds.entry %}
+					<tr>
+					<td width="100" valign="top">
+					<a href="{{item.GetAlternateLink.href}}" title="{{item.title.text}}"><img src="{{item.link.2.href}}" alt="{{item.title.text}}"/></a>
+					</td>
+			
+					<td valign="top">
+						<div class="pl2"><a href="{{item.GetAlternateLink.href}}">{{item.title.text}}</a></div>	
+							{% for attr in item.attribute %}
+								{% ifequal attr.name 'director' %}
+									{{attr.text}}/
+								{% endifequal %}
+								{% ifequal attr.name 'cast' %}
+									{{attr.text}}/
+								{% endifequal %}
+								{% ifequal attr.name 'pubdate' %}
+									{{attr.text}}/
+								{% endifequal %}
+								{% ifequal attr.name 'country' %}
+									{{attr.text}}/
+								{% endifequal %}														
+								{% ifequal attr.name 'language' %}
+									{{attr.text}}/
+								{% endifequal %}
+							{% endfor %}{# attr in attrs #}
+			
+							{% for attr in item.attribute %}
+								{% ifequal attr.name 'imdb' %}
+									<p><span >imdb</span>: <a href="{{attr.text}}">{{attr.text}}</a></p>
+								{% endifequal %}
+							{% endfor %}{# attr in attrs #}
+					</td>
+					<td><a href=''>Add</a></td>
+					</tr>
+					<tr></tr>
+			 {% endfor %}{# feed in feeds #}
+			</table>
+	</div><!--/#result-->
+	
+</div><!--/#section-->
+	
+	<div class="section-footer">
+		{% if search_info %}
+			<p>{{search_info}}</p>
+		{% else %}
+		
+			{% if total_results %}
+				page :
+				{% for nb in page_list %}
+					{% ifequal nb nb_page %}
+					<b><a href="?keyword={{keyword}}&nb_page={{nb|escape}}"  name="nb_page" value="{{ nb|escape}}" onclick="">{{nb}}</a></b> 
+					{% else %}
+						<a href="?keyword={{keyword}}&nb_page={{nb|escape}}"  name="nb_page" value="{{ nb|escape}}" onclick="">{{nb}}</a>
+					{% endifequal %}
+					
+				{% endfor %}
+				( total {{ total_results }} items ) 
+				
+			{% else %}
+				<p> Sorry, no result for your keyword.</p>
+			{% endif %}
+			
+		{% endif %}
+	</div><!--/#section-footer-->
+
+
+{% endblock %}{# content #}
+

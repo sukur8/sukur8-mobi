@@ -1,0 +1,57 @@
+/**
+
+ Copyright (C) 2008 GUO Lin <guolin.mobi nospam-at gmail D0T com>
+ http://guo-lin.com/
+ 
+ Created on 2008-12-08.
+ 
+ $Id: sidebar.css 17 2009-08-04 21:17:34Z guolin.mobi $
+ */
+
+.sidebar-section {
+  margin: 2px 0 8px 0;
+  padding: 0;
+}
+
+.sidebar-section .title, .sidebar-section .title a {
+  margin: 0;
+  padding: 4px 0 10px 4px;
+  font: normal bold 110% 'Century Gothic',helvetica,sans-serif;
+  /* text-transform: uppercase; */
+  color: #2090D0;
+}
+
+.sidebar-section .list {
+  margin: 0px;
+  padding: 0px;
+  border-width: 0;
+}
+
+.sidebar-section .entry {
+  margin: 0;
+  padding: 4px;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  color: #666666;
+}
+
+.sidebar-section .list li {
+  margin: 0;
+  padding: 4px;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  color: #666666;
+  list-style: none outside none;
+  border-top: 1px solid #DDDDDD;
+  text-indent: 0;
+}
+
+.sidebar-section .list li a {
+  color: #666666;
+}
+
+.sidebar-section .list li.current {
+  background-color: #EEEEEE;
+  font-weight: bold;
+}
+
+
+

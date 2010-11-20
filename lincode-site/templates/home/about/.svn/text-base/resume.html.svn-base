@@ -1,0 +1,83 @@
+{% extends "home/about/about.html" %}
+{% comment %}
+<!--
+  Created on 2009-05-02.
+  $Id: resume.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_title %}
+<title>Resume</title>
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/resume.css"/>
+{% endblock %}{# html_title #}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block content %}
+
+<div class="section">
+  <h1>Resume</h1>
+  
+  <div class = "resume">
+	<h3>Education Experience</h3>
+		<p>
+			<b>Master of Computer Science</b>, trans September 2006 ~  trans July 2008<br>
+			Ecole Nationale Superieure des Telecommunications a Paris - <a class="external" href="http://www.enst.fr" rel="external"> Telecom ParisTech</a>, Paris, Fracne<br>
+		</p>
+		<p>
+			<b>B.S of Automation</b>, September 2002 ~  July 2006<br/>
+			Wuhan University, Wuhan, China
+		</p>
+
+    <h3>Research Experience</h3>
+  		<p>
+			<b>Research at Robot Research Lab of Wuhan University</b> November 2004 ~ July 2005<br>
+			 Developed and researched robot contol system for <a class="external" href="http://www.cctv.com/science/special/aburobocon2005ch/01/index.shtml" ref="exterbal">CCTV ABU Robocon 2005</a>, using C on microprocessor AT89S51.
+		</p>
+		
+    <h3>Work Experience</h3>
+		<p>
+			<b>Software Developer at <a class="external" href="http://www.parrot.com/" rel="external">Parrot Inc.</a></b>, July 2007 ~ March 2008<br>
+			Developed commercial softwares using C++, C and Assembler. Worked on the produt Disco which is a softwore running on microprossor for fast research, manage, play music on the mobile divice like usb key, hard disk and mobile phone by Improving the the FFT algorithm. 		
+		</p>
+  		<p>
+			<b>Mobile Software Developer at <a class="external" href="http://www.praxedo.com" rel="external">Praxedo Inc.</a></b>, July 2008 ~ present<br>
+			Developed the mobile client side software using java on Blackberry and J2ME platform.<br/> Praxedo Mobile is a mobile workforce management business solution which is presently using by more than 4000 technicians.
+		</p>
+		
+	
+	<h3>Spare Time Projects</h3>
+		<p>
+			<b>Development and  management of <a class="internal" href="/home/project/afcp/" rel="internal"> AFCP Website"</a></b><br>
+			<a class="external" href="http://afcp.appspot.com/" rel="external">AFCP</a></b> is an association of Chinese students in Paris. I developed and managed the web site for AFCP using Python on <a class="external" href="http://code.google.com/intl/en/appengine/" rel="external"> Google App Engine </a>. 
+		</p>
+		<p>
+			<b>Development of <a class="internal" rel="internal" href="/home/project/carto/">Carto</a></b><br/> 
+			<a class="internal" href="/carto/" rel="internal"><b>Carto</b></a> is a cartographic web application for dispaly dynamically the traffic information of the french city Toulouse. I used XML/XSLT, SVG, Javascript and AJAX during this project.
+		</p>
+
+	<h3>Interesting Domains</h3>
+		<ul>
+			<li><b>Mobile:</b> Blackberry, iphone, Android, J2me</li>
+			<li><b>Web:</b> Java on SSH, Python on Django, Ajax, XML/XSLT, SVG</li>
+			<li><b>Database synchronization technology: </b>SyncML, Sybase's Ultralite </li>
+			<li><b>Software engineer methodology: </b>Designe Pattern, Domain Drive Design, Agile Software Development</li>
+		</ul>	
+
+	<h3>Language</h3>
+		<ul>
+			<li><b>Chinese :</b> native </li>
+			<li><b>French :</b> fluent </li>
+			<li><b>English :</b> CET-6</li>
+		</ul>
+
+	<h3>Interests</h3>
+        <p>Football, Skiing, Literature</p>
+	</div>	
+	
+</div>
+
+{% endblock %}{# content #}
+

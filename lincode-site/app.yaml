@@ -1,0 +1,27 @@
+# Created on 2008-04-24
+# $Id: app.yaml 17 2009-08-04 21:17:34Z guolin.mobi $
+#
+
+application: guo-lin
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+
+# Static files.
+- url: /static
+  static_dir: static
+
+# robots.txt for search engines.
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
+
+# All other incoming requests are handled by main.py.
+- url: /.*
+  script: main.py
+
+# EOF
+
+

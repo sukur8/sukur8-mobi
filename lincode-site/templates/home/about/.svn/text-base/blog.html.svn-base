@@ -1,0 +1,82 @@
+{% extends "home/about/about.html" %}
+{% comment %}
+<!--
+
+  Created on 2008-12-08.
+  $Id: blog.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+
+{% load i18n %}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_title %}
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/feed.css"/>
+
+<title>{% trans "Blog" %}</title>
+
+{% include "home/google_ajax_feed_api.html" %}
+{% include "home/feeds_aggregator.html" %}
+
+<script type="text/javascript">//<![CDATA[
+
+function initialize() {
+    var aggregator = new FeedsAggregator();
+    {% for feed in feeds %}
+        aggregator.addFeed("{{ feed.feed_link }}");
+    {% endfor %}
+    aggregator.feedsNodeId = "feeds";
+    aggregator.loadAndRender();
+}
+
+$(document).ready( function() { initialize(); } );
+
+//]]></script>
+{% endblock %}{# html_title #}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block content %}
+
+<div class="section">
+  <h1>{% trans "Blog" %}</h1>
+
+  
+	<div id="planet-content" class="container">
+
+	  <div id="left-column">
+	  
+		<div id="planet-feeds" class="section">
+		  <h3>{% trans "New Articles" %}</h3>
+		  <div id="feeds"></div>
+	
+		</div><!--/#planet-feeds-->
+	  
+	  </div><!--/#left-column-->
+	  
+	  <div id="right-column">
+	  
+		<div id="planet-members" class="section">
+		  <h3>{% trans "My Blog" %}</h3>
+		  {% for feed in feeds %}
+			<div class="entry">
+			  <div class="entry-title">
+				<a class="external" href="{{ feed.site_link }}" rel="external">{% blocktrans with feed.site_name|escape as blogname %} {{ blogname }} {% endblocktrans %}</a>
+			  </div>
+			  <div class="entry-info">
+				{% blocktrans with feed.author|escape as blogauthor %}  From {{ blogauthor }}.{% endblocktrans %}
+			  </div>
+			</div><!--/.entry-->
+		
+		  {% endfor %}
+		</div><!--/#planet-members-->
+	  
+	  </div><!--/#right-column-->
+
+	</div><!--/#planet-content-->
+	
+</div>
+
+{% endblock %}{# content #}
+

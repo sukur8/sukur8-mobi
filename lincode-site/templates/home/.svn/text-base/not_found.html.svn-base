@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% comment %}
+<!--
+
+  $Id: not_found.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_head %}
+
+    {% block html_title %}
+    <title>Not find in Lincode'home</title>
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/error.css"/>
+{% endblock %}{# html_head #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block sidebar_and_content %}
+
+
+<div id="section">
+    <div id="lvl-1" class="lvl">
+		<dl id="error">
+
+        	<dt>Hmmm... I couldn't find that page. Go back to <a href="/">home</a></dt>
+            
+        </dl>
+        <div class="clean">&nbsp;</div>
+	</div>
+        
+
+</div>
+
+{% endblock %}{# sidebar_and_content #}
+
+

@@ -1,0 +1,44 @@
+{% extends "home/project/project.html" %}
+{% comment %}
+<!--
+  Created on 2008-12-08.
+  $Id: carto.html 17 2009-08-04 21:17:34Z guolin.mobi $
+-->
+{% endcomment %}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_title %}
+<title>Carto</title>
+{% endblock %}{# html_title #}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block content %}
+
+<div class="section">
+  <h1>Carto</h1>
+  
+<h2>Subject</h2>
+  <p>
+	<a href="/carto" rel="external"><b>Carto</b></a> is a cartographic web application for dispaly dynamically the traffic information of the french city Toulouse. I used XML/XSLT, SVG, Javascript and AJAX during this project.  
+  </p>
+  
+  <h2>Web Site</h2>
+	<p>You can visit the <a href="/carto/"><b>Carto</b></a>.<br/>
+	   You need Firefox, Opera or IE 6 for support SVG on browser. If you have only IE 5, please download a plugin from <a class="external" href="http://www.adobe.com/svg/viewer/install/" rel="external">Adobe Inc.</a> .
+	</p>
+	
+    <p>Attention: the function of ajax is not realized on Google app engine in the demo. You can find it in the version for PHP server.</p>
+  <h2>Source Code</h2>
+    <p>You can get source code :
+	<ul>
+		<li><a href="/static/project/carto-php.rar"><b>For PHP server</b></a><br/></li>
+		<!--<li><a href="/static/project/carto-django.rar" rel="external"><b>For Django server</b></a></li>
+		-->
+	</ul>
+	</p>
+  </p>
+</div>
+
+{% endblock %}{# content #}
