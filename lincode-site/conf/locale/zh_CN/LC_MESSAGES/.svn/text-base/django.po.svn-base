@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-07 22:46+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\templates\base.html.py:41 .\templates\base.html.py:84
+#: .\templates\base.html.py:148 .\templates\home\admin\admin.html.py:42
+msgid "Home "
+msgstr "主页"
+
+#: .\templates\base.html.py:42 .\templates\base.html.py:93
+msgid "Resume"
+msgstr "简历"
+
+#: .\templates\base.html.py:43 .\templates\base.html.py:94
+#: .\templates\base.html.py:150 .\templates\home\about\blog.html.py:17
+#: .\templates\home\about\blog.html.py:43
+msgid "Blog"
+msgstr "博客"
+
+#: .\templates\base.html.py:44 .\templates\base.html.py:95
+#: .\templates\base.html.py:151 .\templates\home\about\photo.html.py:14
+#: .\templates\home\about\photo.html.py:40
+msgid "Photo"
+msgstr "照片"
+
+#: .\templates\base.html.py:46 .\templates\base.html.py:97
+#: .\templates\home\about\contact.html.py:14
+#: .\templates\home\about\contact.html.py:22
+msgid "Contact"
+msgstr "联系"
+
+#: .\templates\base.html.py:47 .\templates\base.html.py:102
+#: .\templates\base.html.py:149
+msgid "Project"
+msgstr "项目"
+
+#: .\templates\base.html.py:86
+msgid "Lincode's home"
+msgstr "Lincode 的主页"
+
+#: .\templates\base.html.py:91
+msgid "About me"
+msgstr "关于我"
+
+#: .\templates\base.html.py:104
+msgid "AFCP"
+msgstr ""
+
+#: .\templates\base.html.py:105
+msgid "Carto"
+msgstr ""
+
+#: .\templates\base.html.py:106
+msgid "Douban"
+msgstr ""
+
+#: .\templates\base.html.py:145
+msgid "GUO Lin"
+msgstr "郭麟"
+
+#: .\templates\base.html.py:152 .\templates\base.html.py:153
+msgid "Valid"
+msgstr "确认"
+
+#: .\templates\home\project\douban.html.py:24
+msgid "is a simple demo using Douban API for search movie, music and book."
+msgstr "Douban search是一个使用 Douban API 实现简单的电影，音乐和书籍 搜索引擎。"
+
+#: .\templates\home\project\douban.html.py:31
+#: .\templates\home\project\douban.html.py:41
+msgid "Movie"
+msgstr "电影"
+
+#: .\templates\home\project\douban.html.py:32
+#: .\templates\home\project\douban.html.py:44
+msgid "Book"
+msgstr "书籍"
+
+#: .\templates\home\project\douban.html.py:33
+#: .\templates\home\project\douban.html.py:47
+msgid "Music"
+msgstr "音乐"
+
+#: .\templates\home\project\douban.html.py:118
+msgid "Sorry, no result for your keyword."
+msgstr "对不起，没有与你的关键字匹配的结果。"
+
+#: .\templates\home\admin\admin.html.py:44
+msgid "Lincode's Home"
+msgstr "Lincode 的主页"
+
+#: .\templates\home\admin\admin.html.py:49
+msgid "Admin"
+msgstr "管理"
+
+#: .\templates\home\admin\admin.html.py:51
+msgid "Add Interesting"
+msgstr "添加兴趣"
+
+#: .\templates\home\about\blog.html.py:51
+msgid "New Articles"
+msgstr "新文章"
+
+#: .\templates\home\about\blog.html.py:61
+msgid "My Blog"
+msgstr "我的博客"
+
+#: .\templates\home\about\blog.html.py:65
+#, python-format
+msgid " %(blogname)s "
+msgstr ""
+
+#: .\templates\home\about\blog.html.py:68
+#, python-format
+msgid "  From %(blogauthor)s."
+msgstr ""
+
+#: .\templates\home\about\contact.html.py:24
+msgid "You can contact me by"
+msgstr "你可以通过以下方式联系我"
+
+#: .\templates\home\about\contact.html.py:39
+msgid "Welcome to contact me for"
+msgstr "欢迎因为以下原因联系我"
+
+#: .\templates\home\about\contact.html.py:41
+msgid "Career opportunities"
+msgstr "职业机会"
+
+#: .\templates\home\about\contact.html.py:42
+msgid "Discussion about my projects"
+msgstr "关于我项目的讨论"
+
+#: .\templates\home\about\contact.html.py:43
+msgid "Getting back in touch"
+msgstr "朋友恢复联系"
+
+#: .\templates\home\about\contact.html.py:44
+msgid "Other interesting things"
+msgstr "其他有趣的事情"
+
+#: .\templates\home\about\photo.html.py:47
+msgid "New photo"
+msgstr "新照片"
+
+#: .\templates\home\about\photo.html.py:56
+msgid "My flickr"
+msgstr "我的flickrs"
+
+#: .\templates\home\about\photo.html.py:60
+#, python-format
+msgid " %(flickrname)s "
+msgstr ""
+
+#: .\templates\home\about\photo.html.py:63
+#, python-format
+msgid "  From %(flickrauthor)s."
+msgstr ""

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+	<meta charset="utf-8" />
+-->
+	<!-- Apple-specific meta tags -->
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>Pxo Tests - Geolocation</title>
+	<link rel="stylesheet" type="text/css" href="../html5_tests.css" />
+	<script type="text/javascript" src="../html5_tests.js"></script>
+	
+	<script type="text/javascript" >
+
+
+	   function checkGeolocation(){
+           id = "td_geolocation";
+           if (navigator.geolocation) {
+                console.log("geolocation are supported!");
+                
+                document.getElementById(id).innerHTML = "Suport geolocation";
+                document.getElementById(id).style.backgroundColor="#00FF00";
+           } else {
+                console.log("geolocation are not supported for this Browser/OS version yet.");
+                document.getElementById(id).innerHTML= "No support geolocation";
+                document.getElementById(id).style.backgroundColor="#FF0000";
+           }
+		   
+	   }
+	   
+	   function showLocation(){
+		    navigator.geolocation.getCurrentPosition(
+		            function(position){
+		                var latitude = position.coords.latitude;
+		                var longitude = position.coords.longitude;
+		                var altitude = position.coords.altitude;
+		                     
+		                document.getElementById("td_latitude").innerHTML = latitude;
+		                document.getElementById("td_longitude").innerHTML = longitude;
+		                document.getElementById("td_altitude").innerHTML = altitude;
+		            }
+		    );
+		}
+
+
+        function checkNotificationSupport(){
+            id = "td_notification";
+            if (window.webkitNotifications) {
+                 console.log("Notifications are supported!");
+                 
+                 document.getElementById(id).innerHTML = "Suport Notification";
+                 document.getElementById(id).style.backgroundColor="#00FF00";
+            } else {
+                 console.log("Notifications are not supported for this Browser/OS version yet.");
+                 document.getElementById(id).innerHTML= "No support notification";
+                 document.getElementById(id).style.backgroundColor="#FF0000";
+            }
+        }
+
+        function RequestPermission (callback) {
+               window.webkitNotifications.requestPermission(callback);
+        }
+           
+        function showNotification(){
+            if (window.webkitNotifications.checkPermission() > 0) {
+                RequestPermission(showNotification);
+            }
+            else {
+                window.webkitNotifications.createNotification("http://www.douban.com/pics/dou24.gif", "Title", "Body").show(); 
+            }
+        }
+		
+	</script>
+</head>
+<body onload="checkNotificationSupport();checkGeolocation();">
+    <div class="div_main">
+        <a href="../html5test.html">< Back</a>
+    </div>
+    <!-- Geolocation -->
+	<div id="div_geolocation" class="div_main">
+		<div class="div_title">Geolocation</div>
+		<table class="tab_section_contents">
+		<thead>
+		<tr>
+            <td class="td_label">Support of Geolocation:</td>
+            <td id="td_geolocation" class="td_value"></td>
+        </tr>
+	    <tr>
+	        <td class="td_label"><input type="button" value="Start" onclick="showLocation();" /></td>
+	        <td id="td_geolocation_button" class="td_value"></td>
+	    </tr>
+		</thead>
+		<tbody id="tbody_geolocation">
+	    <tr>
+	        <td class="td_label">Latitude :</td>
+	        <td id="td_latitude" class="td_value"></td>
+	    </tr>
+	    <tr>
+	        <td class="td_label">Longitude : </td>
+	        <td id="td_longitude" class="td_value"></td>
+	    </tr>	
+	    <tr>
+	        <td class="td_label">Altitude : </td>
+	        <td id="td_altitude" class="td_value"></td>
+	    </tr>
+		</tbody>
+	   </table>
+	</div>
+
+    <!-- Notification -->
+	<div id="div_notification" class="div_main">
+        <div class="div_title">Notification</div>
+	    <table class="tab_section_contents">
+	    <thead>
+	    <tr>
+	        <td class="td_label">Support of Notification:</td>
+	        <td id="td_notification" class="td_value"></td>
+	    </tr>
+	    <tr>
+	        <td class="td_label"><input type="button" value="Notification" onclick="showNotification();" /></td>
+	        <td id="td_notification" class="td_value"></td>
+	    </tr>
+	    </thead>
+	    </table>
+    </div>
+	
+
+
+
+</body>
+</html>

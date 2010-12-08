@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html manifest="/appcache.manifest">
+<head>
+<!--
+	<meta charset="utf-8" />
+-->
+	<!-- Apple-specific meta tags -->
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>Pxo Tests - AppCache 3</title>
+	<link rel="stylesheet" type="text/css" href="../../html5_tests.css" />
+	<link rel="stylesheet" type="text/css" href="../css/appcache.css" />
+	<script type="text/javascript" src="../../html5_tests.js"></script>
+	<script type="text/javascript" src="../js/appcache.js"></script>
+	<script type="text/javascript" src="../js/appcache_page3.js"></script>
+</head>
+<body onload="html5.tests.appcache.displayCurrentDate(); html5.tests.appcache.page3.init();">
+
+<!-- Date/Time Info -->
+<div class="div_main">
+	<div class="div_title">Date/Time info</div>
+	<table class="tab_section_contents">
+	<tr>
+		<td class="td_label">Download</td>
+		<td id="td_appcache_dt_download" class="td_value">
+			<fmt:formatDate value="<%= new java.util.Date() %>" pattern="dd/MM/yyyy HH:mm:ss.SSS" timeZone="GMT"/>
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label">Loading</td>
+		<td id="td_appcache_dt_current" class="td_value"></td>
+	</tr>
+	</table>
+</div>
+
+<!-- Components -->
+<div class="div_main">
+	<div class="div_title">Page <span class="span_page_num">#3</span> components</div>
+	<table class="tab_section_contents">
+	<tr>
+		<td class="td_label">JS</td>
+		<td id="td_appcache_js" class="td_value">
+			We are on page <span id="span_page_num3" class="span_page_num"></span> !
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label">IMG</td>
+		<td id="td_appcache_img" class="td_value">
+			<img src="../img/appcache_img3.gif" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label">CSS</td>
+		<td id="td_appcache_css" class="td_value td_text3">
+			On page 3, we love blue !
+		</td>
+	</tr>
+	</table>
+</div>
+
+<!-- Bottom page links -->
+<div class="div_main">
+	<div class="div_button_left">
+		<a href="appcache_page1.html">Back to page 1</a><br/>
+		<a href="appcache_page2.html">Back to page 2</a>
+	</div>
+	<div class="div_button_right"></div>
+</div>
+
+</body>
+</html>

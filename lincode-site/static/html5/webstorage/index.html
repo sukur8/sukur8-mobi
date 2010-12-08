@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+	<meta charset="utf-8" />
+-->
+	<!-- Apple-specific meta tags -->
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>Pxo Tests - WEB Storage</title>
+	<link rel="stylesheet" type="text/css" href="../html5_tests.css" />
+	<script type="text/javascript" src="../html5_tests.js"></script>
+	<script type="text/javascript" src="webstorage.js"></script>
+</head>
+<body onload="html5.tests.storage.initPage();">
+
+<div class="div_main">
+   <a href="../html5test.html">< Back</a>
+</div>
+
+<!-- Event listener -->
+<div id="div_webstorage_event" class="div_main">
+	<div class="div_title">WEB Storage event</div>
+	<table class="tab_section_contents">
+	<tr>
+		<td class="td_label">Events</td>
+		<td id="td_webstorage_event" class="td_value">
+			<input type="button" value="Add listeners" onclick="html5.tests.storage.addEventListeners();" />
+		</td>
+	</tr>
+	</table>
+</div>
+
+<!-- Session storage -->
+<div id="div_webstorage_session" class="div_main">
+	<div class="div_title">Session WEB Storage</div>
+	<table class="tab_section_contents">
+	<thead>
+	<tr>
+		<td class="td_label">Support</td>
+		<td id="td_webstorage_session_support" class="td_value"></td>
+	</tr>
+	</thead>
+	<tbody id="tbody_webstorage_session">
+	<tr>
+		<td class="td_label"><input type="button" value="Clear" onclick="html5.tests.storage.clearStorage('session');" /></td>
+		<td id="td_webstorage_session_clear" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Length" onclick="html5.tests.storage.updateStorageLength('session');" /></td>
+		<td id="td_webstorage_session_length" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Key" onclick="html5.tests.storage.getKey('session');" /></td>
+		<td id="td_webstorage_session_key" class="td_value">
+			i: <input type="text" value="0" id="input_webstorage_session_key_index" size="5" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Set" onclick="html5.tests.storage.setStorageValue('session');" /></td>
+		<td id="td_webstorage_session_set" class="td_value">
+			k: <input type="text" value="key1" id="input_webstorage_session_set_key" size="5" />
+			v: <input type="text" value="blabla" id="input_webstorage_session_set_value" size="5" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Get" onclick="html5.tests.storage.getStorageValue('session');" /></td>
+		<td id="td_webstorage_session_get" class="td_value">
+			k: <input type="text" value="key1" id="input_webstorage_session_get_key" size="5" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Delete" onclick="html5.tests.storage.deleteStorageValue('session');" /></td>
+		<td id="td_webstorage_session_delete" class="td_value">
+			k: <input type="text" value="key1" id="input_webstorage_session_delete_key" size="5" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="List" onclick="html5.tests.storage.listStorage('session');" /></td>
+		<td id="td_webstorage_session_list" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Store" onclick="html5.tests.storage.store('session');" /></td>
+		<td id="td_webstorage_session_store" class="td_value">
+			<input type="text" value="1" id="input_webstorage_session_store_nb" size="5" /> *
+			<input type="text" value="1024" id="input_webstorage_session_store_size" size="5" /> Ko
+		</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+
+<!-- Local storage -->
+<div id="div_webstorage_local" class="div_main">
+	<div class="div_title">Local WEB Storage</div>
+	<table class="tab_section_contents">
+	<thead>
+	<tr>
+		<td class="td_label">Support</td>
+		<td id="td_webstorage_local_support" class="td_value"></td>
+	</tr>
+	</thead>
+	<tbody id="tbody_webstorage_local">
+	<tr>
+		<td class="td_label"><input type="button" value="Clear" onclick="html5.tests.storage.clearStorage('local');" /></td>
+		<td id="td_webstorage_local_clear" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Length" onclick="html5.tests.storage.updateStorageLength('local');" /></td>
+		<td id="td_webstorage_local_length" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Key" onclick="html5.tests.storage.getKey('local');" /></td>
+		<td id="td_webstorage_local_key" class="td_value">
+			i: <input type="text" value="0" id="input_webstorage_local_key_index" size="5" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Set" onclick="html5.tests.storage.setStorageValue('local');" /></td>
+		<td id="td_webstorage_local_set" class="td_value">
+			k: <input type="text" value="key1" id="input_webstorage_local_set_key" size="5" />
+			v: <input type="text" value="blabla" id="input_webstorage_local_set_value" size="5" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Get" onclick="html5.tests.storage.getStorageValue('local');" /></td>
+		<td id="td_webstorage_local_get" class="td_value">
+			k: <input type="text" value="key1" id="input_webstorage_local_get_key" size="5" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Delete" onclick="html5.tests.storage.deleteStorageValue('local');" /></td>
+		<td id="td_webstorage_local_delete" class="td_value">
+			k: <input type="text" value="key1" id="input_webstorage_local_delete_key" size="5" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="List" onclick="html5.tests.storage.listStorage('local');" /></td>
+		<td id="td_webstorage_local_list" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Store" onclick="html5.tests.storage.store('local');" /></td>
+		<td id="td_webstorage_local_store" class="td_value">
+			<input type="text" value="1" id="input_webstorage_local_store_nb" size="5" /> *
+			<input type="text" value="1024" id="input_webstorage_local_store_size" size="5" /> Ko
+		</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+
+</body>
+</html>

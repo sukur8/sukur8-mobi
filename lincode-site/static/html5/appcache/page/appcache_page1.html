@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html manifest="/appcache.manifest">
+<head>
+<!--
+	<meta charset="utf-8" />
+-->
+	<!-- Apple-specific meta tags -->
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>Pxo Tests - AppCache 1</title>
+	<link rel="stylesheet" type="text/css" href="../../html5_tests.css" />
+	<link rel="stylesheet" type="text/css" href="../css/appcache.css" />
+	<script type="text/javascript" src="../../html5_tests.js"></script>
+	<script type="text/javascript" src="../js/appcache.js"></script>
+	<script type="text/javascript" src="../js/appcache_page1.js"></script>
+</head>
+<body onload="html5.tests.appcache.displayCurrentDate(); html5.tests.appcache.page1.init();">
+
+<div class="div_main">
+    <a href="../../html5test.html">< Back</a>
+</div>
+<!-- Date/Time Info -->
+<div class="div_main">
+	<div class="div_title">Date/Time info</div>
+	<table class="tab_section_contents">
+	<tr>
+		<td class="td_label">Download</td>
+		<td id="td_appcache_dt_download" class="td_value">
+			<fmt:formatDate value="<%= new java.util.Date() %>" pattern="dd/MM/yyyy HH:mm:ss.SSS" timeZone="GMT"/>
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label">Loading</td>
+		<td id="td_appcache_dt_current" class="td_value"></td>
+	</tr>
+	</table>
+</div>
+
+<!-- Components -->
+<div class="div_main">
+	<div class="div_title">Page <span class="span_page_num">#1</span> components</div>
+	<table class="tab_section_contents">
+	<tr>
+		<td class="td_label">JS</td>
+		<td id="td_appcache_js" class="td_value">
+			We are on page <span id="span_page_num1" class="span_page_num"></span> !
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label">IMG</td>
+		<td id="td_appcache_img" class="td_value">
+			<img src="../img/appcache_img1.gif" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label">CSS</td>
+		<td id="td_appcache_css" class="td_value td_text1">
+			On page 1, we love green !
+		</td>
+	</tr>
+	</table>
+</div>
+
+<!-- AppCache using -->
+<div class="div_main">
+	<div class="div_title">AppCache using</div>
+	<table class="tab_section_contents">
+	<thead>
+	<tr>
+		<td class="td_label">Support</td>
+		<td id="td_appcache_support" class="td_value"></td>
+	</tr>
+	</thead>
+	<tbody id="tbody_appcache">
+	<tr>
+		<td class="td_label"><input type="button" value="Browser status" onclick="html5.tests.appcache.updateBrowserStatus();" /></td>
+		<td id="td_appcache_browser_status" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="From cache" onclick="html5.tests.appcache.updateFromCache();" /></td>
+		<td id="td_appcache_from_cache" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label"><input type="button" value="Cache status" onclick="html5.tests.appcache.updateCacheStatus();" /></td>
+		<td id="td_appcache_cache_status" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label">Events</td>
+		<td id="td_appcache_event" class="td_value">
+			<input type="button" value="Add listeners" onclick="html5.tests.appcache.addEventListeners();" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label">Cache process</td>
+		<td id="td_appcache_cache_process" class="td_value">
+			<input type="button" value="Update" onclick="html5.tests.appcache.updateCache();" />
+			<input type="button" value="Swap" onclick="html5.tests.appcache.swapCache();" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td_label">Cache logs</td>
+		<td id="td_appcache_cache_logs_header" class="td_value">
+			<input type="button" value="Reset" onclick="html5.tests.appcache.resetLogs();" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" id="td_appcache_cache_logs_body"></td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+
+<!-- Bottom page links -->
+<div class="div_main">
+	<div class="div_button_left"></div>
+	<div class="div_button_right">
+		<a href="appcache_page2.html">Go to page 2</a><br/>
+		<a href="appcache_page3.html">Go to page 3</a>
+	</div>
+</div>
+
+</body>
+</html>

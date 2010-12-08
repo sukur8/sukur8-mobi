@@ -1,0 +1,25 @@
+CACHE MANIFEST
+# version 1.0
+
+NETWORK:
+
+CACHE:
+# -HTML
+/static/html5/appcache/page/appcache_page1.html
+/static/html5/appcache/page/appcache_page2.html
+/static/html5/appcache/page/appcache_page3.html
+# JS
+/static/html5/html5_tests.js
+/static/html5/appcache/js/appcache.js
+/static/html5/appcache/js/appcache_page1.js
+/static/html5/appcache/js/appcache_page2.js
+/static/html5/appcache/js/appcache_page3.js
+# IMG
+/static/html5/appcache/img/appcache_img1.gif
+/static/html5/appcache/img/appcache_img2.gif
+/static/html5/appcache/img/appcache_img3.gif
+# CSS
+/static/html5/html5_tests.css
+/static/html5/appcache/css/appcache.css
+
+FALLBACK:

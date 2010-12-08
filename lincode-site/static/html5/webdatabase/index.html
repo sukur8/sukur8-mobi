@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+	<meta charset="utf-8" />
+-->
+	<!-- Apple-specific meta tags -->
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>Html5 Tests - WEB Database</title>
+	<link rel="stylesheet" type="text/css" href="../html5_tests.css" />
+	<script type="text/javascript" src="../html5_tests.js"></script>
+
+	<script type="text/javascript" src="migrator.js"></script>
+	<script type="text/javascript" src="view_page.js"></script>
+    <script type="text/javascript" src="html5_tests_webdatabase.js"></script>
+	<script type="text/javascript" src="webdatabase.js"></script>
+	<script type="text/javascript" src="webdatabase_mig.js"></script>
+    <script type="text/javascript" src="webdatabase_perf.js"></script>
+	<script type="text/javascript" src="webdatabase_sup.js"></script>
+	<script type="text/javascript" src="webdatabase_foreignkey.js"></script>
+	<script type="text/javascript" src="webdatabase_index.js"></script>
+	<script type="text/javascript" src="webdatabase_tests.js"></script>
+	<script type="text/javascript">
+	 //<![CDATA[
+	   var webdatabaseTest = new WebDatabaseTest();
+	 //]]>
+	</script>
+</head>
+
+<body>
+
+<div class="div_main">
+   <a href="../html5test.html">< Back</a>
+</div>
+
+<div id="div_webdatabase_support" class="div_main">
+	<div class="div_title">WEB Database - General support</div>
+
+	<table class="tab_section_contents">
+	<tr>
+		<td class="td_label"><input type="button" value="Open/Create" onclick="webdatabaseTest.initWebDatabase();" /></td>
+		<td id="td_webdatabase_init_openCreate" class="td_value">
+			n: <input type="text" value="html5" id="input_webdatabase_init_openCreate_name" size="5" />
+			v: <input type="text" value="1.0" id="input_webdatabase_init_openCreate_version" size="5" />
+			<br />
+			d: <input type="text" value="html5 Tests" id="input_webdatabase_init_openCreate_displayName" size="10" />
+			s: <input type="text" value="5000000" id="input_webdatabase_init_openCreate_maxSize" size="10" /> (5 M)
+		</td>
+	</tr>	
+	<tr>
+		<td class="td_label">Current DB</td>
+		<td id="td_webdatabase_init_currentDb_name" class="td_value"></td>
+	</tr>
+
+	<tr>
+		<td class="td_label">Current version</td>
+		<td id="td_webdatabase_init_currentDb_version" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label">Create work_orders</td>
+		<td id="td_webdatabase_init_createTable_1" class="td_value"></td>
+	</tr>	
+	<tr>
+		<td class="td_label">Create consommes</td>
+		<td id="td_webdatabase_init_createTable_2" class="td_value"></td>
+	</tr>			
+    <tr>
+        <td class="td_label">Create techniciens</td>
+        <td id="td_webdatabase_init_createTable_3" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">Create data_type_test</td>
+        <td id="td_webdatabase_init_createTable_4" class="td_value"></td>
+    </tr>
+	</table>
+
+</div>
+<!-- WEB Database - API support -->
+<div id="div_webdatabase_support" class="div_main">
+	<div class="div_title">WEB Database - Callback and RollBack</div>		
+	<table class="tab_section_contents">
+	<tr>
+        <td class="td_label"><input type="button" value="Start Support Test" onclick="webdatabaseTest.startSupportTest();" /></td>
+    </tr>
+	<tr>
+		<td class="td_label">Requete Error CallBack</td>
+		<td id="td_webdatabase_testErrorCallback" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label">Requete Success CallBack</td>
+		<td id="td_webdatabase_testSuccessCallback" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label">RollBack</td>
+		<td id="td_webdatabase_testRollback" class="td_value"></td>
+	</tr>
+	</table>
+</div>
+
+<!-- WEB Database - SQL support -->
+<div id="div_webdatabase_sqlSupport" class="div_main">
+    <div class="div_title">WEB Database - SQL support</div>
+    <table class="tab_section_contents">
+
+    <tr>
+        <td class="td_label">String</td>
+        <td id="td_webdatabase_sql_string" class="td_value"></td>
+    </tr>
+    
+    <tr>
+        <td class="td_label">Locate</td>
+        <td id="td_webdatabase_sql_locate" class="td_value"></td>
+    </tr>
+    
+    <tr>
+        <td class="td_label">Alias</td>
+        <td id="td_webdatabase_sql_alias" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">Cast</td>
+        <td id="td_webdatabase_sql_cast" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">Sub request</td>
+        <td id="td_webdatabase_sql_subrequest" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">Like</td>
+        <td id="td_webdatabase_sql_like" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">Like [0-9]</td>
+        <td id="td_webdatabase_sql_like_number" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">Foreign Key define</td>
+        <td id="td_foreign_key" class="td_value"></td>
+    </tr>
+     <tr>
+        <td class="td_label">Trigger Insert</td>
+        <td id="td_trigger_insert" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">Trigger update</td>
+        <td id="td_trigger_update" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">Trigger delete</td>
+        <td id="td_trigger_delete" class="td_value"></td>
+    </tr>
+    </table>
+</div>
+
+<!-- WEB Database -  -->
+<div id="div_webdatabase_miseajour" class="div_main">
+    <div class="div_title">WEB Database - migration</div>
+    <table class="tab_section_contents">
+    <tr>
+        <td class="td_label">migration</td>
+        <td class="td_value" id="td_webdatabase_migration"></td>
+    </tr>
+    </table>
+</div>
+
+<!-- WEB Database - perfs -->
+<div id="div_webdatabase_Perfs" class="div_main">
+	
+	<div class="div_title">WEB Database - Performance</div>
+	
+	<table class="tab_section_contents">
+	<tr>
+        <td class="td_label"><input type="button" value="Start Perf Test" onclick="webdatabaseTest.startPerformanceTest();" /></td>
+    </tr>    
+	<tr>
+		<td class="td_label">Create Tables</td>
+		<td id="td_webdatabase_createTables" class="td_value"></td>
+	</tr>
+	<tr>
+		<td class="td_label">Drop Tables</td>
+		<td id="td_webdatabase_dropTables" class="td_value"></td>
+	</tr>
+    <tr>
+        <td class="td_label">Add 10 </td>
+        <td id="td_webdatabase_add_10" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">Add 300 </td>
+        <td id="td_webdatabase_add_300" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">Add 1000 </td>
+        <td id="td_webdatabase_add_1000" class="td_value"></td>
+    </tr>
+        <tr>
+        <td class="td_label">select 10 by id</td>
+        <td id="td_webdatabase_select_1001" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select 300 by id</td>
+        <td id="td_webdatabase_select_1002" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select 1000 by id</td>
+        <td id="td_webdatabase_select_1003" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select 10 by customer_name</td>
+        <td id="td_webdatabase_select_Cust_1" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select 300 by customer_name</td>
+        <td id="td_webdatabase_select_Cust_2" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select 1000 by customer_name</td>
+        <td id="td_webdatabase_select_Cust_3" class="td_value"></td>
+    </tr>
+        <tr>
+        <td class="td_label">select 10 by like</td>
+        <td id="td_webdatabase_select_like_Cust_1" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select 300 by like</td>
+        <td id="td_webdatabase_select_like_Cust_2" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select 1000 by like</td>
+        <td id="td_webdatabase_select_like_Cust_3" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select 10 avec order</td>
+        <td id="td_webdatabase_select_Cust_1_order" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select 300 avec order</td>
+        <td id="td_webdatabase_select_Cust_2_order" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select 1000 avec order</td>
+        <td id="td_webdatabase_select_Cust_3_order" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">insert avec ref</td>
+        <td id="td_webdatabase_select_insert_ref" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select avec ref</td>
+        <td id="td_webdatabase_select_select_ref" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">update 10</td>
+        <td id="td_webdatabase_update_Cust_1" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">update 300</td>
+        <td id="td_webdatabase_update_Cust_2" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">update 1000</td>
+        <td id="td_webdatabase_update_Cust_3" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">delete 10</td>
+        <td id="td_webdatabase_delete_Cust_new_1" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">delete 300 </td>
+        <td id="td_webdatabase_delete_Cust_new_2" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">delete 1000 </td>
+        <td id="td_webdatabase_delete_Cust_new_3" class="td_value"></td>
+    </tr>	    
+    <tr>
+        <td class="td_label">select without index</td>
+        <td id="td_normal" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label">select with index</td>
+        <td id="td_index" class="td_value"></td>
+    </tr>
+    <tr>
+        <td class="td_label"><input type="button" value="Store Big" onclick="webdatabaseTest.testStoreBig();" /></td>
+        <td id="td_webdatabase_supportPerfs_storeBig" class="td_value">
+            <input type="text" value="1" id="input_webdatabase_supportPerfs_storeBig_nb" size="5" /> *
+            <input type="text" value="1024" id="input_webdatabase_supportPerfs_storeBig_size" size="5" /> K
+        </td>
+    </tr>
+	</table>
+</div>
+
+</body>
+</html>

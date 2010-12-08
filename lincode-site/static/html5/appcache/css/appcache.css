@@ -1,0 +1,22 @@
+.span_page_num {
+	font-style:italic;
+}
+.td_text1 {
+	color:#0f0;
+}
+.td_text2 {
+	color:#f00;
+}
+.td_text3 {
+	color:#00f;
+}
+.div_button_left {
+	width:50%;
+	float:left;
+	text-align:left;
+}
+.div_button_right {
+	width:50%;
+	float:right;
+	text-align:right;
+}
