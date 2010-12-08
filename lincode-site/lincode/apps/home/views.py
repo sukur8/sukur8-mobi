@@ -160,6 +160,8 @@ def project(request, name=None ):
         return search(request)
     if name == "mobicours":
         return mobicours(request)
+    if name == "html5":
+        return html5(request)
         
     ctxt_dict = { "page_name" : name, }          
     ctxt_dict.update(_get_common_context_dict(request))
@@ -168,7 +170,7 @@ def project(request, name=None ):
     return HttpResponse(tmpl.render(ctxt))
 
 def afcp(request):
-
+    """Displays the afcp project homepage."""
     name = "afcp"
     lang_url = Language.get_lang_prefix(request) 
     ctxt_dict = { "page_name" : name, }
@@ -178,7 +180,7 @@ def afcp(request):
     return HttpResponse(tmpl.render(ctxt))
 
 def carto(request):
-    """Displays the svg project homepage."""
+    """Displays the carto project homepage."""
     name = "carto"
     lang_url = Language.get_lang_prefix(request) 
     ctxt_dict = { "page_name" : name,}
@@ -188,7 +190,7 @@ def carto(request):
     return HttpResponse(tmpl.render(ctxt))    
     
 def mobicours(request):
-    """Displays the svg project homepage."""
+    """Displays the mobicours project homepage."""
     name = "mobicours"
     lang_url = Language.get_lang_prefix(request) 
     ctxt_dict = { "page_name" : name,}
@@ -196,7 +198,17 @@ def mobicours(request):
     ctxt = Context(ctxt_dict)
     tmpl = loader.get_template("%s/project/%s/%s.html" %  (Config.APP_NAME, lang_url, name) )
     return HttpResponse(tmpl.render(ctxt))   
-    
+ 
+def html5(request):
+    """Displays the html5 project homepage."""
+    name = "html5"
+    lang_url = Language.get_lang_prefix(request) 
+    ctxt_dict = { "page_name" : name,}
+    ctxt_dict.update(_get_common_context_dict(request))
+    ctxt = Context(ctxt_dict)
+    tmpl = loader.get_template("%s/project/%s/%s.html" %  (Config.APP_NAME, lang_url, name) )
+    return HttpResponse(tmpl.render(ctxt))  
+ 
 #---------------------------------------------------------------------------------------------------
 # about
 #---------------------------------------------------------------------------------------------------

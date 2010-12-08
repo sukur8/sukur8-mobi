@@ -8,6 +8,11 @@ runtime: python
 api_version: 1
 
 handlers:
+# appCache
+- url: /appcache.manifest
+  mime_type: text/cache-manifest 
+  static_files: static/html5/appcache/appcache.manifest
+  upload: static/html5/appcache/appcache.manifest
 
 # Static files.
 - url: /static
