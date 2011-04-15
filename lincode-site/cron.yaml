@@ -1,0 +1,7 @@
+# Created on 2011-04-16
+# $Id: app.yaml 17 2009-08-04 21:17:34Z guolin.mobi $
+
+cron:
+- description: start detect beijingair task
+  url: /beijingair/
+  schedule: every 1 minutes
