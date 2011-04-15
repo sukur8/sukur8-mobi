@@ -1,4 +1,4 @@
-﻿#!/usr/bin/python
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 # Copyright (C) 2008 GUO Lin <http://www.guo-lin.com>
@@ -18,7 +18,7 @@ urlpatterns = patterns( "",
     # Sub-webapps in the bug garden.
 	( r"^home/", include("lincode.apps.home.urls") ),
 	( r"^carto/", include("lincode.apps.carto.urls") ),
-	
+        ( r"^beijingair/", include("lincode.apps.beijingair.urls")),                
     # Top-level URL mappings.
     ( r"^$", "lincode.apps.views.home" ),
  

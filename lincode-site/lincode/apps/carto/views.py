@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-
-#
 # Created on 2008-05-06.
 # $Id $
 #
