@@ -6,6 +6,8 @@
 #
 
 import logging
+import urllib2
+import json
 
 from django.template import loader
 from django.template import Context
@@ -13,14 +15,18 @@ from django.http import HttpRequest
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 
-from google.appengine.api import urlfetch
+def simulateTwitterAPI(request):
+    ctxt = Context({})
+    tmpl = loader.get_template("twitter.json")
+    return HttpResponse(tmpl.render(ctxt))
 
 def visitDataSource(request):
     """Visit data source."""
-    url = "http://www.baidu.com/"
-    result = urlfetch.fetch(url)
-    if result.status_code == 200:
-        logging.info("%s" %  result.content)
+    url = 'http://localhost:8080/'
+    response = urllib2.urlopen(url)
+    content = response.read()
+    if response.code == 200:
+        logging.info("%s" %  content)
         ctxt_dict = { "value" : "Task Success!" }
     else:
         ctxt_dict = { "value" : "Task Fail!"}

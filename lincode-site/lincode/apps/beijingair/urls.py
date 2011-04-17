@@ -7,7 +7,7 @@
 from django.conf.urls.defaults import patterns
 
 urlpatterns = patterns( "lincode.apps.beijingair.views",
-   
-	( r"^$"    		, "visitDataSource"     ), 
-
+        ( r"^$",       "visitDataSource"    ),
+	( r"^visit/$", "visitDataSource"    ), 
+        ( r"^json/$",  "simulateTwitterAPI" ),
 )
