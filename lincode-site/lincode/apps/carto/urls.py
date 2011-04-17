@@ -8,7 +8,7 @@ from django.conf.urls.defaults import patterns
 
 urlpatterns = patterns( "lincode.apps.carto.views",
    
-	( r"^$"                                   		, "carto"     ), 
+	( r"^$"    		, "carto"     ), 
 
 )
 
